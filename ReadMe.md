@@ -4,7 +4,7 @@ I independently completed [my twelfth project](https://www.freecodecamp.org/lear
 
 ## Adding INSERT_THIS
 ### Problem Solving
-For this project, I had to ...INSERT. My notes on the full task brief for this are [here](https://github.com/franpanteli/12--Relational-Databases-SQL-Reference-Object-Project/blob/main/0%20relational-databases-course-overview.txt). 
+For this project, I had to ...INSERT. My notes on the full task brief for this are [here](https://github.com/franpanteli/12--Relational-Databases-SQL-Reference-Object-Project/blob/main/1%20project-task-notes.txt). 
 
 ### Solution Workflow 
 - To solve this problem, I first cloned the project boilerplate files in a Gitpod environment and followed ....(INSERT_number) .....(INSERT_content) lessons
