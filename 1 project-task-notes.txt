@@ -1,3 +1,20 @@
 These are my notes on the project task page. This project is called "Build an SQL Reference Object." The URL for the page which these notes are on is https://www.freecodecamp.org/learn/relational-database/learn-git-by-building-an-sql-reference-object/build-an-sql-reference-object
 
-- INSERT
+About this guided project:
+	- This is a 240-lesson guided project course 
+	- The purpose of this project is to practice using Git 
+	- We do this to keep track of the code 
+	- We are creating an object containing commonly used SQL commands for this 
+
+To complete the guided project:
+	- Copy the project boilerplate code in a Gitpod environment 
+	- Open the command palette (command, shift, p)
+	- CodeRoad: Start
+	- Complete the guided project 
+
+Saving progress: 
+	- You have to complete all of the project progress in one go (without backing out of Gitpod)
+		- Otherwise your progress might not be saved -> in which case you would have to redo it
+
+
+
