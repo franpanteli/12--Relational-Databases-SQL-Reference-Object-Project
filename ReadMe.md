@@ -14,5 +14,5 @@ For this project, I had to create an SQL reference object by completing 240 Git 
 
 ## To Clone This Repository
 ```
-git clone https://github.com/franpanteli/12--Relational-Databases-SQL-Reference-Object-Project.git
+git clone https://github.com/franpanteli/Relational-Databases-SQL-Reference-Object-Project.git
 ```
