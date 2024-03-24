@@ -8,7 +8,7 @@ For this project, I had to create an SQL reference object by completing 240 Git 
 
 ### Solution Workflow 
 - To solve this problem, I first cloned the project boilerplate files in a Gitpod environment and followed 240 Git lessons
-- An SQL reference object was created for this, which held three files (README.md, sample.env and sql_reference.json) 
+- An [SQL reference object](https://github.com/franpanteli/Relational-Databases-SQL-Reference-Object-Project/tree/main/sql_reference) was created for this, which held three files (README.md, sample.env and sql_reference.json) 
 -  The [in-depth notes I produced when completing this task are here](https://github.com/franpanteli/12--Relational-Databases-SQL-Reference-Object-Project/blob/main/2%20relational-databases-sql-reference-object-project-course-notes.txt). These are annotated and include the Bash / Git commands which were run when creating this reference object 
 - Since the project was run in a virtual machine and the aim of this was to practice Git / Bash commands, `git log` was run for its sample.env and sql_reference files. Running this for these two files showed the result of the Git lessons on these files' commit history. The output of these git logs were placed into two shell files, `git log sample.env.sh` and `git log sql_reference.json.sh` and comitted to this repository  
 
