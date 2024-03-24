@@ -2,29 +2,29 @@
 -> mkdir sql_reference
 -> cd sql_reference
 -> git init
--> ls -a
--> git status
+-> ls -a <- To view all of the files in the current directory, including the hidden ones 
+-> git status <- To see which files are staged, unstaged and untracked  
 -> git checkout -b main
 -> git status
 -> touch README.md
 -> git status
 -> git add README.md
 -> git status
--> touch sql_reference.json
+-> touch sql_reference.json <- We are making the different project files 
 -> git status
 -> git add sql_reference.json
 -> git status
 -> git commit -m "Initial commit"
 -> git status
--> git log
--> git status
--> git diff
--> git add sql_reference.json
--> git status
+-> git log <- To show a history of commits (rather than the status of the files in the current directory)
+-> git status 
+-> git diff <- To show the difference between two files in the working directory and the staging area (index)
+-> git add sql_reference.json <- This means any changes made to this file will be a part of the next commit 
+-> git status <- Tell me the status of those commands 
 -> git commit -m "feat: add create database reference"
--> git log
--> git status
--> git diff
+-> git log <- For the commit history 
+-> git status <- For the status of the changes made to the current files (if they have been staged etc)
+-> git diff <- To show the difference between various states of the Git repository 
 -> git add sql_reference.json
 -> git commit -m "feat: add drop database reference"
 -> git log
@@ -40,7 +40,7 @@
 -> git log <- And then back out of this
 -> git log --oneline <- To view the content of the entire git log 
 -> git checkout main
--> git log --oneline
+-> git log --oneline <- To show an outline of the commit history 
 -> git branch
 -> git merge feat/add-create-table-reference
 -> git log --oneline
@@ -49,7 +49,7 @@
 -> git checkout -b feat/add-drop-table-reference
 -> git status
 -> git diff
--> git add sql_reference.json
+-> git add sql_reference.json <- Start tracking changes to this file and include them in the next commit made 
 -> git commit -m "feat: add drop table reference"
 -> git checkout main
 -> git branch
@@ -57,66 +57,73 @@
 -> git branch -d feat/add-drop-table-reference
 -> git checkout -b feat/add-column-references
 -> git diff
--> git add sql_reference.json
+-> git add sql_reference.json <- Staging the changes to the file 
 -> git commit -m "feat: add column reference"
--> git log --oneline
+-> git log --oneline <- This shows a list of commits with the commit messages, on one line 
 -> git checkout main
 -> git checkout -b fix/create-table-syntax
--> git add sql_reference.json
+-> git add sql_reference.json <- Add changes to this file in the next commit 
 -> git commit -m "fix: create table syntax"
 -> git checkout main
 -> git branch
 -> git merge fix/create-table-syntax
 -> git log --oneline
--> git branch -d fix/create-table-syntax
+-> git branch -d fix/create-table-syntax <- Delete the branch from the local repository, now that we have stopped working on it - depending on whether the changes have been merged or not 
 -> git checkout feat/add-column-references
 -> git log --oneline
--> git rebase main
+-> git rebase main <- This rebases the current branch onto the main branch 
+	-> The changes on the main branch are integrated into the branch we are currently working on
+	-> The branch we are working on is based on another branch -> rebasing it means, integrate the changes made on the main branch to those made on this one
 -> git log --oneline
--> git add sql_reference.json
+-> git add sql_reference.json <- Stage the file for the next commit 
 -> git commit -m "feat: add drop column reference"
 -> git log --oneline
 -> git checkout main
 -> git checkout -b feat/add-insert-row-reference
--> git add sql_reference.json
+-> git add sql_reference.json <- Stage the changes to this file (this is different to git add . )
 -> git commit -m "feat: add insert row reference"
 -> git checkout main
 -> git branch
 -> git merge feat/add-insert-row-reference
 -> git checkout feat/add-column-references
--> git rebase main
--> git status
--> git add sql_reference.json
+-> git rebase main <- Base the current branch on the main branch (if changes have been made to the main branch)
+-> git status <- Show me the current status of all of the files / branches and the changes made 
+-> git add sql_reference.json 
 -> git status
 -> git rebase --continue
+	-> Continue the rebase -> proceed with the next batch of commits onto the target command 
 -> git log --oneline
 -> git add sql_reference.json
 -> git commit -m "feat: add rename column reference"
 -> git checkout feat/add-insert-row-reference
--> git status
--> git stash
--> git status
--> git stash list
--> git stash pop
--> git stash list
--> git stash
--> git stash list
--> git stash show
--> git stash show -p
--> git stash apply
--> git stash list
+-> git status 
+-> git stash <- Put these changes aside, so I can go and work on something else 
+-> git status 
+-> git stash list <- Display a list of stashed changes 
+	-> Referencing specific stashes when popping them 
+-> git stash pop <- Reapply stashed changes back into the working directory 
+-> git stash list 
 -> git stash
 -> git stash list
--> git stash show stash@{1}
--> git stash show -p stash@{1}
--> git stash drop
+-> git stash show <- Show the changes stored in the most recent stash 
+-> git stash show -p <- For the full patch 
+-> git stash apply <- To apply the changes from the most recent stash to the working directory, without moving the stash to the stack 
+-> git stash list <- To list all the saved stashes in the repository 
+-> git stash
 -> git stash list
+-> git stash show stash@{1} <- To show the changes stored in a specific stash 
+	-> Which files are modified, the number of changes added or removed 
+-> git stash show -p stash@{1} <- To show the full patch of the changes 
+-> git stash drop <- Remove the most recent stash from the stack 
+	-> Once this is done, they are not recoverable (use with caution, and make sure you are dropping the correct stash)
+-> git stash list <- To list all the stashes saved in the repository 
 -> git checkout main
--> git branch -d feat/add-insert-row-reference
+-> git branch -d feat/add-insert-row-reference <- Delete this branch from the local repository 
+	-> This is okay if the branch has been merged beforehand 
 -> git checkout -b feat/add-more-row-references
--> git stash list
--> git stash pop
--> git stash list
+-> git stash list <- To list all of the changes stashed in the repository 
+-> git stash pop <- Apply the changes in the most recent stash and then remove the stash from the stack 
+-> git stash list <- To list all the stashes we have 
 -> git diff
 -> git add sql_reference.json
 -> git commit -m "feat: add update row reference"
@@ -128,10 +135,11 @@
 -> git add sql_reference.json
 -> git status
 -> git rebase --continue
--> git log --oneline
--> git add sql_reference.json
+-> git log --oneline <- Show the commit history on one line 
+-> git add sql_reference.json <- Stage this file for the next commit 
 -> git commit -m "feat: add primary key reference"
--> git add sql_reference.json
+-> git add sql_reference.json <- Staging the file for the next commit 
+	-> This does not make them permanent (so we need to commit them)
 -> git commit -m "feat: add foreign key reference"
 -> git checkout feat/add-more-row-references
 -> git add sql_reference.json
@@ -143,37 +151,55 @@
 -> git add sql_reference.json
 -> git commit -m "fix: add missing rename database reference"
 -> git checkout feat/add-column-references
--> git rebase main
+-> git rebase main <- Rebase the current branch onto the next one; incorporate the changes in main onto the current branch 
+	-> This re-writes the commit history 
+	-> You can also use git merge rather than this, in case the changes haven't yet been pushed 
 -> git add sql_reference.json
 -> git status
 -> git rebase --continue
 -> git add sql_reference.json
 -> git commit -m "feat: add unique reference"
--> git reset HEAD~1
--> git log --oneline
+-> git reset HEAD~1 <- Move the current branch's head pointer and the index back one commit 
+	-> We are preserving the changes made in that last commit as untagged commits 
+	-> We can edit the commit messages, for example - and this one would show us the last commit 
+-> git log --oneline <- To show the commit history (hash and message) on one line
 -> git status
 -> git diff <- Then q out of it 
+	-> To show differences between commits 
+	-> Or the changes which aren't yet staged 
 -> git add sql_reference.json
 -> git commit -m "feat: add unique reference"
--> git revert HEAD
+-> git revert HEAD <- Create a new commit which undoes the changes done by the most recent commit 
+	-> We are creating a commit which undoes (reverts) the changes of the last commit
+	-> It's not undoing the previous commit by deleting it, it's creating another new commit which undoes the affects of the last one 
+	-> So we can get rid of this commit in case we want to reverse its effects 
 -> git log --oneline
--> git show
--> git show HEAD~1
+-> git show <- To show types of objects (commits, tabs trees)
+	-> This shows the most recent commit (head) - information about the most recent commit for example 
+-> git show HEAD~1 <- To show information one commit behind the parent commit 
 -> git rebase --interactive HEAD~2 
-	-> Then deleting the last two commits by changing 'pick' to 'drop'
--> git log --one line
--> git rebase --interactive --root
+	-> Then deleting/ editing the last two commits by changing 'pick' to 'drop'
+	-> There are a list of different changes you can make to the commits when you do this in the project files 
+-> git log --one line <- To show the commit history on a single line 
+-> git rebase --interactive --root <- An interactive rebase from the initial commit of the repository 
+	-> This shows a list of all of the previous commits for the project, which we can change 
 -> then we are changing one of the commit messages using reword, by adding an s to the end of it  
--> git log --oneline
+-> git log --oneline <- A simplified version of the commit history with the abbreviated commit hash and the commit message on a single line 
 -> git rebase main
 -> git log --oneline
--> git rebase --interactive HEAD~5
--> Then squashing together five commit messages
+-> git rebase --interactive HEAD~5 <- Show me the previous five commits, which we can now edit 
+	-> Then squashing together five commit messages using s in nano 
+	-> When this is done, there are a list of different options which can be used to change the commits 
 -> git log --oneline
--> git log -1
+-> git log -1 <- Display a single commit from the commit history 
+	-> The details of the most recent commit in the commit history 
+	-> You can change the last commit and it will show it to us 
 -> git checkout main
 -> git merge feat/add-column-references
 -> git branch -d feat/add-column-references
+	-> Delete this branch 
+	-> You can also force delete the branch with -D
+	-> Its commits and history 
 -> git checkout fix/add-missing-rename-references
 -> git rebase main
 -> git log -5 --oneline
@@ -184,30 +210,31 @@
 -> git rebase --interactive HEAD~2
 	-> We are then squashing the last two commits into one  
 -> When you make changes to a file, you will be prompted to (in this case) add a comment explaining a change which was made
--> git log -1
+-> git log -1 <- Show me the most recent commit and let me change it 
 -> git checkout main
 -> git merge fix/add-missing-rename-references
 -> git branch
 -> git branch -d fix/add-missing-rename-references
--> git log --oneline
+-> git log --oneline <- To display the commit history on one line 
 -> git checkout -b feat/add-gitignore
 -> touch .env
--> touch .gitignore
+-> touch .gitignore <- This is a hidden file 
 -> git status
 -> code .gitignore
--> echo .env > .gitignore
+-> echo .env > .gitignore <- To add the contents of the .env file to the hidden .gitignore file
 -> git status
--> git add .gitignore
+-> git add .gitignore <- Stage the changes to this file 
 -> git commit -m "feat: add .gitignore" 
 -> touch sample.env
 -> git status
--> echo SECRET= > sample.env 
--> git add sample.env
+-> echo SECRET= > sample.env <- Create a file called sample.env, with this content  
+-> git add sample.env 
 -> git commit -m "feat: add sample.env"
--> git log -5 --oneline
--> git rebase --interactive HEAD~2
--> git log -1
+-> git log -5 --oneline <- Show a simplified version of the commit history, with the abbreviated commit hash and message on one line, limited to the last 5 commits 
+-> git rebase --interactive HEAD~2 <- Show me the last two commits, so I can edit them -> the default to this is 'pick'
+	-> This allows us to change this process 
+-> git log -1 <- Display information about the most recent commit in the repository (the commit hash, author, date and commit message)
 -> git checkout main
 -> git merge feat/add-gitignore
--> git branch -d feat/add-gitignore
--> git log --oneline
+-> git branch -d feat/add-gitignore <- Delete this branch, since we have merged the changes from it into the main one 
+-> git log --oneline <- Show a simplified version of the commit history, on a single line 
